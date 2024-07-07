@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: If you use this library in published research, please cite it as follows.
+authors:
+  - given-names: Barak
+    family-names: Shoshany
+    orcid: https://orcid.org/0000-0003-2222-127X
+    email: bshoshany@brocku.ca
+title: A C++17 Thread Pool for High-Performance Scientific Computing
+doi: 10.1016/j.softx.2024.101687
+url: https://github.com/bshoshany/thread-pool
+preferred-citation:
+  type: article
+  authors:
+    - given-names: Barak
+      family-names: Shoshany
+  title: A C++17 Thread Pool for High-Performance Scientific Computing
+  journal: SoftwareX
+  volume: 26
+  year: 2024
+  start: 101687
+  doi: 10.1016/j.softx.2024.101687
+  url: https://www.sciencedirect.com/science/article/pii/S235271102400058X

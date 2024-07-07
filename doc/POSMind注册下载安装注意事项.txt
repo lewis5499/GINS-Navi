@@ -1,0 +1,5 @@
+1. 按照“7.组合导航软件POSMind使用教程.pdf”中的下载与安装教程下载POSMind软件和测试数据，并安装POSMind软件
+2. 选择一组示例数据，根据POSMind使用教程中的“算例演示”部分，进行GNSS和组合解算，熟悉POSMind软件的数据解算流程
+
+3. Kaggle账号注册时有一个人机验证的步骤，需要翻墙才能验证；注册完成后不用翻墙也可以访问POSMind软件的网址
+4. 安装完POSMind软件之后，需要使用“POSMind_Software”文件夹下的“IPSLicence.lic”替换POSMind软件安装目录下相应的lic文件才能正常解算数据

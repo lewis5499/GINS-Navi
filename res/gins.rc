@@ -1,0 +1,5 @@
+#include "module/resource.h"
+
+IDI_ICON ICON "gins.ico"
+IDI_ICON_SMALL ICON "gins_48_48.ico"
+IDI_ICON_LARGE ICON "gins_72_72.ico"
