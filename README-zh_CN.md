@@ -2,6 +2,8 @@
 
 GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软件，兼容windows(GUI)与Linux(CUI)。
 
+![GUI Image](./res/GUI.png)
+
 [使用软件前，请务必仔细阅读“配置”信息。]
 
 联系作者：刘恒祯，武汉大学，lewis5499@whu.edu.cn
