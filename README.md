@@ -37,10 +37,10 @@ GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软�
 |             | `imutxtfilepath`            | ` `                            | IMU TXT file path                          |
 |             | `odofilepath`               | ` `                            | ODO file path                             |
 |             | `outputpath`                | `F:\GINS-Navi\data\WHU20240522-XWGI7660\` | Output path                                |
-| **Initial Information** | `startweek`               | `2315`                         | Start week (no need to modify)                       |
-|             | `endweek`                 | `2315`                         | End week (no need to modify)                         |
-|             | `starttow`                 | `291724.0`                     | Start time of week (no need to modify)              |
-|             | `endtow`                   | `295006.0`                     | End time of week (no need to modify)                |
+| **Initial Information** | `startweek`               | `2315`                         | Start week (or you can use 'auto')                       |
+|             | `endweek`                 | `2315`                         | End week (or you can use 'auto')                         |
+|             | `starttow`                 | `291724.0`                     | Start time of week (or you can use 'auto')              |
+|             | `endtow`                   | `295006.0`                     | End time of week (or you can use 'auto')                |
 |             | `initpos`                  | `[30.528078962, 114.355762445, 40.9652]` | Initial position [deg, deg, m] (derived from RTK results)     |
 |             | `initvel`                  | `[-0.002, -0.838, -0.028]`     | Initial velocity [m/s] (derived from RTK results)         |
 |             | `initatt`                  | `[0.183, 0.183, 272.55]`       | Initial attitude [deg] (not used if `useAttFromRoughAlign` is true)    |
