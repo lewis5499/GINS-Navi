@@ -69,9 +69,7 @@ GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软�
 |             | `zupt_vmeasnoise`         | `[0.10, 0.10, 0.10]`           | ZUPT velocity measurement noise [m/s]                       |
 |             | `zupt_wmeasnoise`         | `50`                           | ZUPT angular velocity measurement noise [deg/h]             |
 |             | `CodeNoise`               | `4.0`                          | Code noise [m]                                              |
-|
-
-             | `CPNoise`                 | `0.05`                         | Carrier phase noise [m]                                      |
+|             | `CPNoise`                 | `0.05`                         | Carrier phase noise [m]                                      |
 | **Update Frequency** | `odonhcupdaterate`         | `1.0`                          | ODO/NHC update rate [Hz]                                    |
 |             | `zuptupdaterate`          | `1.0`                          | ZUPT update rate [Hz]                                       |
 | **RTK Post Options** | `pos1-posmode`             | `kinematic`                   | Positioning mode                                            |
