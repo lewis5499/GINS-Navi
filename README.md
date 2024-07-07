@@ -150,9 +150,7 @@ GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软�
 |             | `stats-prnpos`             | `0`                            | PRN position error [m]                                      |
 |             | `stats-clkstab`            | `5e-12`                        | Clock stability [s/s]                                       |
 | **Antenna 1** | `ant1-postype`             | `llh`                          | Position type                                               |
-|             | `ant1-pos1`                | `90`                           | Position 1 [
-
-deg|m]                                          |
+|             | `ant1-pos1`                | `90`                           | Position 1 [deg|m]                                          |
 |             | `ant1-pos2`                | `0`                            | Position 2 [deg|m]                                          |
 |             | `ant1-pos3`                | `-6335367.6285`                | Position 3 [m|m]                                            |
 |             | `ant1-anttype`             | ` `                            | Antenna type                                                |
