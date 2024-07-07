@@ -13,12 +13,12 @@ GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软�
 | **Section** | **Parameter**               | **Value**                      | **Description**                                                              |
 |-------------|-----------------------------|--------------------------------|------------------------------------------------------------------------------|
 | **Configure** | `navSys`                    | `nFrame`                       | Navigation frame, especially the INS mechanism                               |
-|             | `usegnssvel`                | `true`                         | Whether to use GNSS velocity update                                          |
-|             | `useZUPT`                   | `false`                        | Whether to use ZUPT detection and update                                     |
-|             | `useodonhc`                 | `true`                         | Whether to use ODO/NHC update (ODO not completed yet)                        |
-|             | `usesinglenhc`              | `true`                         | Whether to use single NHC update                                             |
-|             | `usesingleodo`              | `false`                        | Whether to use single ODO update (ODO not completed yet)                     |
-|             | `onlyinsmech`               | `false`                        | Whether to use only the INS mechanism                                        |
+|             | `usegnssvel`                | `true`                         | Whether use GNSS velocity update or not                                         |
+|             | `useZUPT`                   | `false`                        | Whether use ZUPT detection and update or not                                     |
+|             | `useodonhc`                 | `true`                         | Whether use ODO/NHC update or not (ODO not completed yet)                        |
+|             | `usesinglenhc`              | `true`                         | Whether to use single NHC update or not                                             |
+|             | `usesingleodo`              | `false`                        | Whether use single ODO update or not (ODO not completed yet)                     |
+|             | `onlyinsmech`               | `false`                        | Whether use only the INS mechanism or not                                        |
 | **IMU Settings** | `imudataformat`             | `asc`                          | IMU data format (0: imr, 1: asc, 2: txt[7 columns])                           |
 |             | `imurawcoordinate`          | `RFU`                          | Raw IMU data in RFU or FRD                                                   |
 |             | `imuInitStaticTime`         | `5.0`                          | IMU initial alignment time [min]                                             |
