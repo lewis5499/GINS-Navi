@@ -1,16 +1,14 @@
-# GNSS/INS Integrated Navigation GUI Software
+# GNSS/INS 组合导航GUI软件
 
-[English Version](./README.md) | [中文版](./README-zh_CN.md)
+GINS-Navi软件是一款基于ESKF的GNSS/INS松组合算法的组合导航软件，兼容windows(GUI)与Linux(CUI)。
 
-GINS-Navi is a GNSS/INS loosely coupled integrated navigation software based on the ESKF algorithm, compatible with both Windows (GUI) and Linux (CUI) environments.
+[使用软件前，请务必仔细阅读“配置”信息。]
 
-[Please read the "Configuration" section carefully before using the software.]
+联系作者：刘恒祯，武汉大学，lewis5499@whu.edu.cn
 
-Contact: Hengzhen Liu, Wuhan University, lewis5499@whu.edu.cn
+## 1 配置
 
-## 1 Configuration
-
-The project's configuration files are located in the ./conf directory. Detailed parameters for the algorithm can be set through these configuration files.
+项目的配置文件为./conf目录下的*.conf，可通过配置文件提供详细的解算参数选择：
 
 | **Section** | **Parameter**               | **Value**                      | **Description**                                                              |
 |-------------|-----------------------------|--------------------------------|------------------------------------------------------------------------------|
@@ -187,70 +185,80 @@ The project's configuration files are located in the ./conf directory. Detailed 
 |             | `file-solstatfile`         | ` `                            | Solution status file                                        |
 |             | `file-tracefile`           | ` `                            | Trace file                                                  |
 
-## 2 Compilation and Execution
+## 2 程序编译与运行
 
-### 2.1 Source Code and Compilation
+### 2.1 源码及编译
 
-The project is managed using CMake. All source code is located in the ./include and ./src directories. It is recommended to use Mingw for compilation.
+项目采用CMake管理, ./include ./src目录下提供了所有源码。建议使用Mingw编译。
 
-### 2.2 Dependencies
+### 2.2 依赖库
 
-On Windows, the software relies on the WIN32 API for window management. Third-party libraries such as Eigen, MatPlotlib-cpp, tqdm-cpp, and thread-pool are included in the ./ThirdParty directory.
+windows下依赖WIN32 API以实现窗体, 第三方的Eigen库、MatPlotlib-cpp库、tqdm-cpp库、thread-pool库等内容均在./ThirdParty目录下。
 
-The CMakeLists file is fully configured, allowing users to compile the program in one simple step. The recommended IDE is CLion.
+CMakeLists已经配置完善，用户简单一步编译程序即可，推荐CLion IDE。
 
-### 2.3 Output Results
+### 2.3 运行结果
 
-The "Output Path" in the configuration file specifies the output paths for navigation results (including STD), IMU error information (including STD), and visualization results (2D and 3D trajectories, elevation, Euler angles [RPY], IMU bias/scale factor errors, and STD).
+配置中的“Output Path”设置了导航结果信息(含STD)、IMU误差信息(含STD)的输出路径，以及可视化结果(二维、三维轨迹、高程，姿态欧拉角组[RPY]，IMU零偏/比例因子误差及STD等)
 
-### 2.4 Visualization
+### 2.4 可视化
 
-This C++ GUI program uses the Matplotlib library to automatically generate result plots, including 2D and 3D trajectories, velocity/attitude, IMU errors, and STD. If this affects performance, it can be disabled as detailed in the configuration file.
+本C++窗体程序调用了Matplotlib库进行自动的结果图绘制：二维平面轨迹、三维轨迹、vel/att、imu误差以及STD等。如果您觉得影响了效率，则可禁用之，请详见配置文件。
 
-The 'nav_result.pos' file in the output directory conforms to the RTKlib standard and can be directly imported into rtkplot.exe for RTK result visualization.
+输出目录下的'nav_result.pos'文件对接rtklib标准，亦可以直接使用rtkplot.exe导入该文件进行RTK结果可视化。
 
-## 3 Datasets
+## 3 数据集
 
-### 3.1 Test Data
+### 3.1 测试数据
 
-The ./data/ directory contains six sets of IMU data with varying accuracies, including:
+./data/ 目录下放置了六组不同精度IMU的数据，主要有：
 
-- LeadorA15 (navigation grade, high accuracy)
-- XWGI7680 (tactical grade, medium-high accuracy)
-- CHC CGI-430 (MEMS, low accuracy)
-- InvenSense ICM-20602 (MEMS, low accuracy)
+LeadorA15（导航级，高精度），XWGI7680（战术级，中高精度），CHC CGI-430 （MEMS，低精度），InvenSense ICM-20602（MEMS，低精度）。
 
-The truth.nav file contains reference truth data obtained through backward smoothing.
+truth.nav为反向平滑的参考真值数据。
 
-Configuration files for these datasets are located in the ./conf/ directory.
+./conf/目录下存放了对应数据的配置文件
 
-### 3.2 Compatible Data Formats
+### 3.2 兼容的数据格式
 
-The software supports NovAtel's IMR and ASC format data, as well as custom seven-column txt data (see the [i2nav open-source dataset](https://github.com/i2Nav-WHU/awesome-gins-datasets) for details).
+兼容NovAtel公司的IMR、ASC格式数据，以及自定义的七列txt数据（请详见[i2nav开源数据集](https://github.com/i2Nav-WHU/awesome-gins-datasets)的说明）。
 
-## 4 Inheritable Modules
+## 4 模块继承
 
-The software provides several inheritable modules, including a progress bar class (tqdm), a configuration manager class (configManager), file read/write classes (fileloader/filesaver), algebra calculation class (algebra), and a plotting class (matplotlib-cpp).
+提供了独立可继承的模块：可继承的进度条类(tqdm)、增删改查配置类(configManager)、文件读写类(fileloader/filesaver)、代数计算类(algebra)、绘图类(matplotlib-cpp)等等。
 
-## 5 Features
+## 5 特色
 
-- Compatible with both Windows (GUI) and Linux (CUI)
-- Detailed parameter settings for the algorithm
-- Lightweight and efficient GUI design using native Windows API, similar to RTKlib style
-- GUI features include mailto help, GUI progress bar, and robust configuration read/write error handling
-- Integrated RTK post-processing module from RTKlib, providing high-precision algorithms and detailed computation strategies
-- Object-oriented core code for loosely coupled integration (factory pattern, abstraction, function templates, etc.), with extensive error handling and clean code
-- Efficient algorithm implementation using thread pool for parallel task submission
-- Single-header inheritable classes for configuration, file read/write, algebra calculation, and tqdm progress bar
-- GNSS information quality control (observation information), such as setting absolute and relative thresholds for GNSS position and velocity observation updates, constraining data in the x, y, and z directions to exclude poor-quality data
-- Compatible with various inertial navigation data formats (asc, imr, txt)
-- Week-crossing error handling (under testing)
-- Navigation framework options for n-frame and e-frame (e-frame has a minor bug yet to be fixed)
-- Estimation/non-estimation of IMU scale factors (ESKF state vector is 21-dimensional/15-dimensional)
-- Robust algorithm tested with multiple datasets: navigation grade, tactical grade, MEMS
+同时兼容 win(GUI)、linux(CUI)，提供详细解算参数设置;
 
----
+使用Windows原生API，进行轻量高效的GUI设计，仿rtklib窗体风格;
 
-The algorithm is not perfect, lacking backward smoothing and unsmoothed results. Further research in the field of integrated navigation is planned during graduate studies. The current content, developed during undergraduate studies, remains at a reproduction level.
+窗体具有 mailto 帮助，GUI progress bar，以及配置读写的容错处理;
 
----
+从源代码层面集成 rtklib 的RTK后处理模块，算法高精，提供详尽的解算策略;
+
+松组合核心代码纯面向对象思想(工厂模式/抽象/函数模版..., etc)，进行了详尽的容错处理，项目代码简洁;
+
+使用了线程池并行提交任务，算法高效;
+
+可继承的配置类、文件读写类、代数计算类、可继承的二次开发的 tqdm 进度条类，均为单头文件;
+
+GNSS信息质量控制(观测信息)：例如设置可用的绝对阈值（与相对阈值），在启用 GNSS 位置、速度观测更新时，分别对 x、y、z 方向的数据进行约束，剔除某方向质量不好的数据
+
+兼容asc imr txt 多种惯导数据;
+
+跨周的容错处理(待测试);
+
+提供 n 系 e 系编排的导航框架选择(e系编排有一个小bug仍未修复);
+
+估计/不估计IMU比例因子(ESKF状态向量为21维/15维);
+
+提供多数据集测试，算法鲁棒：导航级、战术级、MEMS;
+
+... ...
+
+。。。不想写了。。。看配置文件相信能够看得懂 (doge
+
+算法是不完善的，反向编排没加，结果没进行平滑，
+
+后续读研阶段计划继续深入研究组合领域，本科的内容还是比较浅，仅停留在复现阶段。
