@@ -238,33 +238,33 @@ The software provides several inheritable modules, including a progress bar clas
 
 ## 5 Features
 
-- Compatible with both Windows (GUI) and Linux (CUI)
+- · Compatible with both Windows (GUI) and Linux (CUI)
 
-- Detailed parameter settings for the algorithm
+- · Detailed parameter settings for the algorithm
 
-- Lightweight and efficient GUI design using native Windows API, similar to RTKlib style
+- · Lightweight and efficient GUI design using native Windows API, similar to RTKlib style
 
-- GUI features include mailto help, GUI progress bar, and robust configuration read/write error handling
+- · GUI features include mailto help, GUI progress bar, and robust configuration read/write error handling
 
-- Integrated RTK post-processing module from RTKlib, providing high-precision algorithms and detailed computation strategies
+- · Integrated RTK post-processing module from RTKlib, providing high-precision algorithms and detailed computation strategies
 
-- Object-oriented core code for loosely coupled integration (factory pattern, abstraction, function templates, etc.), with extensive error handling and clean code
+- · Object-oriented core code for loosely coupled integration (factory pattern, abstraction, function templates, etc.), with extensive error handling and clean code
 
-- Efficient algorithm implementation using thread pool for parallel task submission
+- · Efficient algorithm implementation using thread pool for parallel task submission
 
-- Single-header inheritable classes for configuration, file read/write, algebra calculation, and tqdm progress bar
+- · Single-header inheritable classes for configuration, file read/write, algebra calculation, and tqdm progress bar
 
-- GNSS information quality control (observation information), such as setting absolute and relative thresholds for GNSS position and velocity observation updates, constraining data in the x, y, and z directions to exclude poor-quality data
+- · GNSS information quality control (observation information), such as setting absolute and relative thresholds for GNSS position and velocity observation updates, constraining data in the x, y, and z directions to exclude poor-quality data
 
-- Compatible with various inertial navigation data formats (asc, imr, txt)
+- · Compatible with various inertial navigation data formats (asc, imr, txt)
 
-- Week-crossing data handling (under testing)
+- · Week-crossing data handling (under testing)
 
-- Navigation framework options for n-frame and e-frame (e-frame has a minor bug yet to be fixed)
+- · Navigation framework options for n-frame and e-frame (e-frame has a minor bug yet to be fixed)
 
-- Estimation/non-estimation of IMU scale factors (ESKF state vector is 21-dimensional/15-dimensional)
+- · Estimation/non-estimation of IMU scale factors (ESKF state vector is 21-dimensional/15-dimensional)
 
-- Robust algorithm tested with multiple datasets: navigation grade, tactical grade, MEMS
+- · Robust algorithm tested with multiple datasets: navigation grade, tactical grade, MEMS
 
 ---
 
