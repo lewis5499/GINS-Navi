@@ -4,11 +4,9 @@
 
 GINS-Navi is a GNSS/INS loosely coupled integrated navigation software based on the ESKF algorithm, compatible with both Windows (GUI) and Linux (CUI) environments.
 
-<div style="text-align:center;">
+<div align="center">
     <img src="./res/GUI.png" alt="GUI Image" width="350" height="242">
 </div>
-
-![GUI Image](./res/GUI.png)
 
 [Please read the "Configuration" section carefully before using the software.]
 
